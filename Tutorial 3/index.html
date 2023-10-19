@@ -1,0 +1,49 @@
+<!-- Develop a script that will determine the gross pay for each of three employees.
+The company pays "straight time" for the first 40 hours worked by each employee and pays
+"time and a half" for all hours worked in excess of 40 hours. You're given a list of the
+employees of the company, the number of hours each employee worked last week and the hourly
+rate of each employee. Your script should input this information for each employee, determine
+the employee's gross pay and output HTML5 text that displays the employee's gross pay.
+Use prompt dialogs to input the data -->
+
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Tutorial 3</title>
+</head>
+
+<body>
+    <script>
+        const employees = [];
+
+        for (let i = 1; i <= 3; i++) {
+            let name = prompt(`Enter the name of Employee ${i}: `);
+            let hoursWorked = parseFloat(prompt(`Enter the number of hours worked by ${name} last week: `));
+            let hourlyRate = parseFloat(prompt(`Enter the hourly rate for ${name}:`));
+
+            employees.push({
+                name: name,
+                hoursWorked: hoursWorked,
+                hourlyRate: hourlyRate
+            });
+        }
+
+        function calculateGrossPay(hoursWorked, hourlyRate) {
+            if (hoursWorked <= 40) {
+                return hoursWorked * hourlyRate;
+            } else {
+                const regularPay = 40 * hourlyRate;
+                const overtimePay = (hoursWorked - 40) * (hourlyRate * 1.5);
+                return regularPay + overtimePay;
+            }
+        }
+
+        document.write("<h1>Employee Gross Pay:</h1>");
+        for (let employee of employees) {
+            const grossPay = calculateGrossPay(employee.hoursWorked, employee.hourlyRate);
+            document.write(`<p>${employee.name}: Rs ${grossPay.toFixed(2)}</p>`);
+        }
+    </script>
+</body>
+
+</html>
