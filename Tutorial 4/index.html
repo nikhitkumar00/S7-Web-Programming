@@ -1,0 +1,44 @@
+<!-- write a script that uses looping to print the following table of values
+Output the results in an HTML5 table, Use CSS to center the data in
+each column -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Tutorial 4</title>
+    <style>
+        td {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <table id="myTable" border="1px">
+    </table>
+    <script>
+        let table = document.getElementById('myTable');
+
+        let headerRow = table.createTHead().insertRow();
+        ['N', '10*N', '100*N', '1000*N'].forEach(text => {
+            headerRow.appendChild(document.createElement('th')).innerHTML = text;
+        });
+
+        for (let i = 1; i <= 6; i++) {
+            let row = table.insertRow(i);
+
+            let cell1 = row.insertCell(0);
+            cell1.innerHTML = i;
+
+            let cell2 = row.insertCell(1);
+            cell2.innerHTML = 10 * i;
+
+            let cell3 = row.insertCell(2);
+            cell3.innerHTML = 100 * i;
+
+            let cell4 = row.insertCell(3);
+            cell4.innerHTML = 1000 * i;
+        }
+    </script>
+</body>
+</html>
