@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <p id="demo"></p>
+    <script>
+        let count = 0;
+        let element;
+
+        for (let i = 101; i <= 201; i++) {
+            count++;
+            if (count === 33) {
+                element = i;
+                break;
+            }
+        }
+        document.getElementById("demo").innerHTML = "The 33rd element between 101 and 201 is: " + element;
+    </script>
+</body>
+</html>
