@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Click Action Listener</title>
+    <style>
+        html {
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        button {
+            width: 100px;
+            height: 50px;
+            background-color: rgb(255, 0, 0);
+            color: white;
+            font-size: 20px;
+            border-radius: 10px;
+            border: 2px solid black;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="btn1">Click Me</button>
+    <button id="btn2">Double Click Me</button>
+    <button id="btn3">Mouse Down</button>
+    <button id="btn4">Mouse Out</button>
+    <button id="btn5">Mouse Over</button>
+</body>
+<script>
+    document.getElementById("btn1").addEventListener("click",() => {
+        alert("Clicked");
+    })
+    document.getElementById("btn2").addEventListener("dblclick", () => {
+        alert("Double Clicked");
+    })
+    document.getElementById("btn3").addEventListener("mousedown", () => {
+        alert("Mouse Down");
+    })
+    document.getElementById("btn4").addEventListener("mouseout", () => {
+        alert("Mouse Out");
+    })
+    document.getElementById("btn5").addEventListener("mouseover", () => {
+        alert("Mouse Over");
+    })
+</script>
+
+</html>
