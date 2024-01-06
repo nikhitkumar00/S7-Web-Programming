@@ -1,0 +1,10 @@
+{
+	"students": [
+		{ "name": "NIKHIT", "age": 21 },
+		{ "name": "SURYA", "age": 22 },
+        { "name": "SHUBHAM", "age": 23 },
+        { "name": "VISHAL", "age": 24 },
+        { "name": "YASH", "age": 25 }
+	],
+    "count": 5
+}
