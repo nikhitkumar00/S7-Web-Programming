@@ -3,7 +3,7 @@
     if (connect_error()) {
         die('Connection failed: ' . mysqli_connect_error());
     }
-    $query = "DELETE FROM stock WHERE id = $_POST[id]";
+    $query = "DELETE FROM stock WHERE id = '$_POST['id']'";
     $res = mysqli_query($conn, $query);
     if($res === false) {
         die(mysqli_error($conn));
